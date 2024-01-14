@@ -1,14 +1,13 @@
 import { useState } from "react";
 import "./Counter.css";
 
-export default function Counter() {
-  const [count, setCount] = useState(0);
-  const [step, setStep] = useState(1);
+export default function Counter({count,setCount,step,setStep}) {
 
-  const onCountIncrementHandler = () => {
+
+  const onCountDicrementHandler = () => {
     setCount((c) => c - 1);
   };
-  const onCountDicrementHandler = () => {
+  const onCountIncrementHandler = () => {
     setCount((c) => c + 1);
   };
   const onStepIncrementHandler = () => {
@@ -29,7 +28,6 @@ export default function Counter() {
         Count:{count}
         <button onClick={onCountIncrementHandler}>+</button>
       </div>
-      <p>30 day of today is Wen Jul 21 2027</p>
     </div>
   );
 }
