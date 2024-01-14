@@ -1,12 +1,13 @@
 import "./App.css";
 import Counter from "./components/counter/Counter";
 import CounterDate from "./components/date/CounterDate";
-import Date from "./components/date/CounterDate";
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [step, setStep] = useState(1);
+	
+	const [step, setStep] = useState(1);
+	const [count, setCount] = useState(0);
+	
   return (
     <div className="date-counter">
       <Counter
