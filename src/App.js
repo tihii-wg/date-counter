@@ -23,10 +23,14 @@ function App() {
   const onStepInputChange = (value) => {
     setStep(value);
   };
-
   const onCountInputChange = (value) => {
     setCount(value);
   };
+  const resetHandler = () => {
+    setCount(0);
+    setStep(1);
+  };
+	
   return (
     <div className="date-counter">
       <Counter
@@ -39,7 +43,11 @@ function App() {
         onStepInputChange={onStepInputChange}
         onCountInputChange={onCountInputChange}
       />
-      <CounterDate count={count} />
+		  <CounterDate
+			  count={count}
+			  step={step}
+			  resetHandler={resetHandler}
+		  />
     </div>
   );
 }

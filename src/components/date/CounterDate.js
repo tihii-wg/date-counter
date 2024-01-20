@@ -1,12 +1,12 @@
-import './CounterDate.css'
+import "./CounterDate.css";
 
-export default function CounterDate({ count }) {
+export default function CounterDate({ count, step, resetHandler }) {
   const date = new Date();
   date.setDate(date.getDate() + count);
   console.log(date.toDateString());
 
   return (
-    <div className='date'>
+    <div className="date">
       <span>
         {count === 0
           ? "Today is"
@@ -14,10 +14,13 @@ export default function CounterDate({ count }) {
           ? `${count} days from todai is `
           : `${Math.abs(count)} days ago was `}
       </span>
-		  <span>{date.toDateString()}</span>
-		  <div className="rst-btn">
-			  <button>Reset</button>
-		  </div>
+      <span>{date.toDateString()}</span>
+
+      {count === 0 && step === 1 ? null : (
+        <div className="rst-btn">
+          <button onClick={resetHandler}>Reset</button>
+        </div>
+      )}
     </div>
   );
 }
