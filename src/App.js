@@ -13,24 +13,36 @@ function App() {
   const onCountIncrementHandler = () => {
     setCount((c) => c + step);
   };
-  const onStepIncrementHandler = () => {
-    setStep((s) => s + 1);
-  };
-  const onStepDicrementHandler = () => {
-    setStep((s) => s - 1);
+  //  const onStepIncrementHandler = () => {
+  //    setStep((s) => s + 1);
+  //  };
+  //  const onStepDicrementHandler = () => {
+  //    setStep((s) => s - 1);
+  //  };
+
+  const onStepInputChange = (value) => {
+    setStep(value);
   };
 
+  const onCountInputChange = (value) => {
+    setCount(value);
+  };
   return (
     <div className="date-counter">
       <Counter
         count={count}
         step={step}
         onCountDicrementHandler={onCountDicrementHandler}
-        onStepIncrementHandler={onStepIncrementHandler}
+        //  onStepIncrementHandler={onStepIncrementHandler}
         onCountIncrementHandler={onCountIncrementHandler}
-        onStepDicrementHandler={onStepDicrementHandler}
+        //  onStepDicrementHandler={onStepDicrementHandler}
+        onStepInputChange={onStepInputChange}
+        onCountInputChange={onCountInputChange}
       />
       <CounterDate count={count} />
+      <div>
+        <button>Reset</button>
+      </div>
     </div>
   );
 }
