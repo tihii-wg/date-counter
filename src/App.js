@@ -40,9 +40,6 @@ function App() {
         onCountInputChange={onCountInputChange}
       />
       <CounterDate count={count} />
-      <div>
-        <button>Reset</button>
-      </div>
     </div>
   );
 }
